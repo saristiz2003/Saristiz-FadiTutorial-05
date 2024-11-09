@@ -105,9 +105,9 @@ resultMessage.textContent = "";
 // numbers and create a string "rgb(0,0,0)" but replace the 0 with random values. 
 //return that string
 function makeColour() {
-	var r = Math.floor(Math.random()+256);
-	var g = Math.floor(Math.random()+256);
-	var b = Math.floor(Math.random()+256);
+	var r = Math.floor(Math.random()*256);
+	var g = Math.floor(Math.random()*256);
+	var b = Math.floor(Math.random()*256);
 
 	return "rgb("+r+","+g+","+b+")";
 
