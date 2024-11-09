@@ -83,7 +83,7 @@ function clickCircle() {
 // Ensure that if a circle is clicked that the clickCircle function is called. 
 function reset() {
 
-	colours = getRandomColours();
+	colours = genRandomColours();
 	
 	pickedColor = chooseColor();
 
