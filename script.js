@@ -58,9 +58,9 @@ function clickCircle() {
 		circles.forEach(function(circle)
 	{
 		circle.style.backgroundColor = pickedColor;
-	}
+	});
 		banner.style.backgroundColor = pickedColor;
-	);
+	
 
 	}else{
 		this.style.backgroundColor = defaultColour;
@@ -81,13 +81,13 @@ function clickCircle() {
 // Ensure that if a circle is clicked that the clickCircle function is called. 
 function reset() {
 
-	colours = genRandomColours();
+	colours = genRandomColours(numCircles);
 	
 	pickedColor = chooseColor();
 
 	colourToGuess.textContent = pickedColor;
 
-	circles.forEach ( function(circle,index){
+	circles.forEach (function(circle,index){
 
 		circle.style.backgroundColor = colours[index];
 
@@ -117,9 +117,9 @@ function makeColour() {
 // Write a function that will set new values for the colours array.
 // It should contain as many RGB color strings as there are circles
 function genRandomColours() {
-	var randomFillArray = []
+	var randomFillArray = [];
 
-	for (var i = 0; i = numCircles; i++){
+	for (var i = 0; i < numCircles; i++){
 		randomFillArray.push(makeColour());
 	}
 	return randomFillArray;
@@ -130,7 +130,7 @@ function genRandomColours() {
 // this function should set the colour you are guessing.
 function chooseColor() {
 
-	var chosenRandom = Math.floor(math.random()+colours.length);
+	var chosenRandom = Math.floor(math.random()*colours.length);
 	return colours[chosenRandom]; 
 
 } // broken repo
