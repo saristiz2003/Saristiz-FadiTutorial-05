@@ -116,7 +116,7 @@ function makeColour() {
 
 // Write a function that will set new values for the colours array.
 // It should contain as many RGB color strings as there are circles
-function genRandomColours() {
+function genRandomColours(numCircles) {
 	var randomFillArray = [];
 
 	for (var i = 0; i < numCircles; i++){
@@ -130,7 +130,7 @@ function genRandomColours() {
 // this function should set the colour you are guessing.
 function chooseColor() {
 
-	var chosenRandom = Math.floor(math.random()*colours.length);
+	var chosenRandom = Math.floor(Math.random()*colours.length);
 	return colours[chosenRandom]; 
 
 } // broken repo
