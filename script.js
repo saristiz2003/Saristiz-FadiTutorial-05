@@ -59,10 +59,10 @@ function clickCircle() {
 	{
 		circle.style.backgroundColor = pickedColor;
 	}
-				banner.style.backgroundColor = pickedColor;
-	});
+		banner.style.backgroundColor = pickedColor;
+	);
 
-	else{
+	}else{
 		this.style.backgroundColor = defaultColour;
 
 		resultMessage.textContent = "TRY AGAIN";
