@@ -57,10 +57,10 @@ function clickCircle() {
 
 		circles.forEach(function(circle)
 	{
-		circle.style.backgroundColor = selected;
+		circle.style.backgroundColor = pickedColor;
 	});
 
-	banner.style.backgroundColor = selected;
+	banner.style.backgroundColor = pickedColor;
 
 	}
 
@@ -87,7 +87,7 @@ function reset() {
 	
 	pickedColor = chooseColor();
 
-	colourToGuess.textContent = "("+pickedColor+")";
+	colourToGuess.textContent = pickedColor;
 
 	circles.forEach ( function(circle,index){
 
