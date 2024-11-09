@@ -58,11 +58,9 @@ function clickCircle() {
 		circles.forEach(function(circle)
 	{
 		circle.style.backgroundColor = pickedColor;
-	});
-
-	banner.style.backgroundColor = pickedColor;
-
 	}
+				banner.style.backgroundColor = pickedColor;
+	});
 
 	else{
 		this.style.backgroundColor = defaultColour;
