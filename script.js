@@ -48,9 +48,9 @@ resetButton.addEventListener("click",reset);
 // and change the result text to be "Try again"
 function clickCircle() {
 
-	var selected = this.style.backgroundColor;
+	
 
-	if (selected === pickedColor){
+	if (this.dataset.correct === "true" ){
 		
 		resultMessage.textContent = "YOU WIN";
 		resetButton.textContent = "PLAY AGAIN";
@@ -60,12 +60,20 @@ function clickCircle() {
 		circle.style.backgroundColor = pickedColor;
 	});
 		banner.style.backgroundColor = pickedColor;
+
+		circles.forEach(function(circle) { // added to only allow 1 pick
+			circle.removeEventListener("click", clickCircle);
+		}); 
 	
 
 	}else{
 		this.style.backgroundColor = defaultColour;
 
 		resultMessage.textContent = "TRY AGAIN";
+
+		circles.forEach(function(circle) { // added to only allow 1 pick
+			circle.removeEventListener("click", clickCircle);
+		});
 	}
 }
 
@@ -90,7 +98,7 @@ function reset() {
 	circles.forEach (function(circle,index){
 
 		circle.style.backgroundColor = colours[index];
-
+		circle.dataset.correct = (colours[index] === pickedColor); //mark a index as correct choice
 		circle.addEventListener("click", clickCircle);
 	});
 
